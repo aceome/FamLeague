@@ -8,7 +8,7 @@ Capstone project for PDX Code Guild
 - Leaderboard
 - Chatroom
 #### Problem this project is solving
-My family plays this game every year, but it takes a lot of time to write everything out and send everyone updates. With this website everyone can create their own team line up, check their scores and have the ability to see who's winning without having to wait.
+My family plays "FamLeague" every year, but it takes a lot of time to write everything out and send everyone updates. With this website everyone can create their own team line up, check their scores and have the ability to see who's winning without having to wait.
 #### Libraries/Frameworks
 - Django
 - Beautiful Soup
