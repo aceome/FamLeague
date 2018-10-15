@@ -16,7 +16,6 @@ My family plays "FamLeague" every year, but it takes a lot of time to write ever
 - Bootstrap
 
 ## User Walkthrough
-{insert image of flow chart}
 - login/register
 - pick teams from columns A, B, C, D (ensure no one has the same team line up)
 - check your teams score/points
@@ -49,5 +48,6 @@ My family plays "FamLeague" every year, but it takes a lot of time to write ever
 - History of past winners
 - Post to social media account if user wants to
 - add AJAX to help with design in picking teams, if 3 match disable the last team thats the same to ensure the user cant pick it.
+- at the end of the season the team categories will change from best to worst depending on their scores to pick for next year.
 
 
