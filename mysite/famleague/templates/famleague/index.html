@@ -15,19 +15,19 @@
 		<div class="panel-panel-default">
 			<div class="panel-body">
 				<form>
-					<div class="input-group login-userinput">
+					<div class="login-userinput">
 
-						<input id="txtUser" type="text" class="form-control" name="username" placeholder="Username">
+						<input id="txtUser" type="text" name="username" placeholder="Username">
 					</div>
 					<div class="input-group">
 
-						<input  id="txtPassword" type="password" class="form-control" name="password" placeholder="Password">
+						<input id="txtPassword" type="password" name="password" placeholder="Password">
 
 					</div>
-					<button class="btn btn-primary btn-block login-button" type="submit">Login</button>
-					<div class="checkbox login-options">
+					<button class="login-button" type="submit">Login</button>
+					<div class="login-options">
 
-						<a href="#" class="login-register">Don't have an account? Create one now</a>
+						<a href="{% 'famleague:register' %}" class="login-register">Don't have an account? Create one now</a>
 					</div>
 				</form>
 			</div>
