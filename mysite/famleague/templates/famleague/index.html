@@ -2,43 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FamLeague</title>
+    <title>Welcome to FamLeague</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 </head>
 <body>
-    <h1>FamLeague</h1>
-	<div class="container-login-form">
-
-		<div class="panel-panel-default">
-			<div class="panel-body">
-				<form>
-					<div class="login-userinput">
-
-						<input id="txtUser" type="text" name="username" placeholder="Username">
-					</div>
-					<div class="input-group">
-
-						<input id="txtPassword" type="password" name="password" placeholder="Password">
-
-					</div>
-					<button class="login-button" type="submit">Login</button>
-					<div class="login-options">
-
-						<a href="{% 'famleague:register' %}" class="login-register">Don't have an account? Create one now</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
-
+    <div id="main-user-page">
+        <h1>Welcome {{username}}</h1>
+        <a href="{% url 'famleague:logout_user' %}">logout</a>
+        <h3>Your Team Lineup</h3>
+    </div>
 
 </body>
 </html>
