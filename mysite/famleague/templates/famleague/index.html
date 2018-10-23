@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <title>Welcome to FamLeague</title>
     {% load static %}
-    <!--<link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />-->
+    <link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 </head>
 <body>
+
     <div id="main-user-page">
-        <h1>Welcome {{username}}</h1>
-        <a href="{% url 'famleague:logout_user' %}">logout</a>
+        <span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+        <h1>Welcome {{login_user.username}}</h1>
+        <!--<a href="{% url 'famleague:logout_user' %}">logout</a>-->
         <h3>Your Team Lineup</h3>
     </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="{% url 'famleague:index' %}">Your Team</a>
+      <a href="{% url 'famleague:leader' %}">Leader Board</a>
+      <a href="{% url 'famleague:logout_user' %}">Logout</a>
+      <!--<a href="#">Contact</a>-->
+    </div>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 
 </body>
 </html>

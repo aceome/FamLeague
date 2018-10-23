@@ -4,21 +4,63 @@
     <meta charset="UTF-8">
     <title>How to Play</title>
     {% load static %}
-    <!--<link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />-->
+    <link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 </head>
 <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="{% url 'famleague:index' %}">Your Team</a>
+      <a href="{% url 'famleague:leader' %}">Leader Board</a>
+      <a href="{% url 'famleague:logout_user' %}">Logout</a>
+      <!--<a href="#">Contact</a>-->
+    </div>
+
     <div id="main-rules">
+        <span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
         <h1>How To Play</h1>
 
         <p class="rules">
-            Each player will pick a team from each column A, B, C and D then choose one of those teams to be a tiebreaker. Every team lineup is different so the earlier you pick your teams the more likely no one else will have that line up!
+            Each player will pick a team from column A, B, C and D then choose one of those teams to be a tiebreaker. Every team lineup is different so the earlier you pick your teams the more likely no one else will have that line up!
+            <h3>Points System</h3>
+            <ul>
+                <li>Win = 2 points</li>
+                <li>Tie = 1 points</li>
+                <li>Lose/Bye week = 0 points</li>
+            </ul>
 
 
 
         </p>
+        <input id="cb_agree" type="checkbox"/>I agree to the rules stated above
+        <button id="bt_agree" disabled>Next</button>
     </div>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        let cb_agree = document.querySelector('#cb_agree')
+        let bt_agree = document.querySelector('#bt_agree')
+        cb_agree.onchange = function() {
+            if (cb_agree.checked) {
+                bt_agree.removeAttribute('disabled')
+            } else {
+                bt_agree.setAttribute('disabled', 'disabled')
+            }
+        }
+        bt_agree.onclick = function() {
+            window.location = "{% url 'famleague:lineup' %}"
+        }
+    </script>
+
 
 </body>
 </html>

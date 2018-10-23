@@ -52,6 +52,7 @@ def rules(request):
 
 @login_required
 def lineup(request):
+
     return render(request, 'famleague/lineup.html')
 
 
