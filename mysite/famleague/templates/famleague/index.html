@@ -12,9 +12,10 @@
 
     <div id="main-user-page">
         <span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-        <h1>Welcome {{login_user.username}}</h1>
+        <h1>Welcome {{user.name}}</h1>
         <!--<a href="{% url 'famleague:logout_user' %}">logout</a>-->
         <h3>Your Team Lineup</h3>
+        <img src="{{images.url}}"/>
     </div>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

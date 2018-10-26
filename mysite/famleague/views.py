@@ -2,12 +2,16 @@ from django.shortcuts import render, reverse
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
+from .models import Team
 
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @login_required
 def index(request):
+
+    user_teams = Team.objects.filter(User=users.name)
+
     return render(request, 'famleague/index.html')
 
 def login_view(request):
