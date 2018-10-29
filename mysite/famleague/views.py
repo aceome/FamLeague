@@ -6,13 +6,12 @@ from .models import Team
 
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
 @login_required
 def index(request):
-
-    user_teams = Team.objects.filter(User=users.name)
-
-    return render(request, 'famleague/index.html')
+    teams = request.user.team_set.all()
+    user_teams = {'teams': teams}
+    return render(request, 'famleague/index.html', user_teams)
 
 def login_view(request):
     return render(request, 'famleague/login.html')
@@ -55,9 +54,11 @@ def rules(request):
 
 
 @login_required
-def lineup(request):
+def lineup(request, category):
+    teams = Team.objects.filter(category=category)
+    user_teams = {'teams': teams, 'category': category}
 
-    return render(request, 'famleague/lineup.html')
+    return render(request, 'famleague/lineup.html', user_teams)
 
 
 @login_required
