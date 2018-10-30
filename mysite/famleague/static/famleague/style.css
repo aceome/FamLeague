@@ -1,7 +1,9 @@
 
 body {
     margin: 0 auto;
-    background-color: azure;
+    /*margin-left: 250px;*/
+    /*background-color: azure;*/
+    font-family: 'Open Sans', sans-serif;
 }
 #main-flex-container {
     text-align: center;
@@ -102,7 +104,10 @@ a, a:hover, a:focus {
 	text-decoration: none;
     transition: all .3s;
 }
+h1 {
 
+    font-family: 'Monoton', cursive;
+}
 h1, h2 {
 	margin-top: 10px;
 	font-size: 38px;
@@ -182,9 +187,25 @@ h1, h2 {
     width: 750px;
     background-color: rgba(0, 0, 0, .3);
 }
+.btn {
+  border: none;
+  background-color: transparent;
+}
+
+img {
+    width: 150px;
+}
+
+.teampick {
+  transition: .5s ease;
+  opacity: .3;
 
 
-
-
+}
+.teampick:hover {
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
 
 

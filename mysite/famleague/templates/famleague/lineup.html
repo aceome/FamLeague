@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Teams</title>
+    <title>🏈 FamLeague 🏈</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />
 </head>
@@ -10,35 +10,31 @@
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="{% url 'famleague:index' %}">Your Team</a>
-      <a href="{% url 'famleague:leader' %}">Leader Board</a>
+      <a href="{% url 'famleague:leader' %}">Leaderboard</a>
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
       <!--<a href="#">Contact</a>-->
     </div>
     <div id="main-lineup">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
 
-        <h1>PICK TEAMS</h1>
+        <h2>Create Your Lineup</h2>
 
-        <div class="a-column">
-            <h3>A</h3>
-            <div class="helmet">
+        <div class="teams">
+            <h3>{{category}}</h3>
 
-            </div>
-        </div>
-
-        <div class="b-column">
-            <h3>B</h3>
-
-        </div>
-
-        <div class="c-column">
-            <h3>C</h3>
-
-        </div>
-
-        <div class="d-column">
-            <h3>D</h3>
-
+            <form method="post">
+                {% csrf_token %}
+                {% for team in teams %}
+                    <button type="submit" class="btn" formaction="{% url 'famleague:pick_team' team.id %}">
+                        <img class="teampick" src="{{team.image.url}}">
+                    </button>
+                    {{team.city}} {{team.name}}
+                {% endfor %}
+            </form>
+            <button type="submit" class="btn-a" name="a_btn">A</button>
+            <button type="submit" class="btn-a" name="b_btn">B</button>
+            <button type="submit" class="btn-a" name="c_btn">C</button>
+            <button type="submit" class="btn-a" name="d_btn">D</button>
         </div>
     </div>
 

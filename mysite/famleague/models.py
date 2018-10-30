@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.utils import timezone
+from datetime import datetime
 from django.contrib.auth.models import User
 
 
@@ -14,3 +15,13 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+# class TeamScore(models.Model, Team):
+#     game = models.ManyToManyField(Team)
+#     date = models.DateTimeField()
+#     score = models.IntegerField()
+
+    # def __str__(self):
+    #     return self.game
