@@ -9,8 +9,10 @@
 <body>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="{% url 'famleague:rules' %}">How to Play</a>
       <a href="{% url 'famleague:index' %}">Your Team</a>
       <a href="{% url 'famleague:leader' %}">Leaderboard</a>
+      <a href="{% url 'famleague:lineup' 'A' %}">Lineup</a>
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
       <!--<a href="#">Contact</a>-->
     </div>
@@ -28,13 +30,13 @@
                     <button type="submit" class="btn" formaction="{% url 'famleague:pick_team' team.id %}">
                         <img class="teampick" src="{{team.image.url}}">
                     </button>
-                    {{team.city}} {{team.name}}
+                <div class="team-city"> {{team.city}} {{team.name}}</div>
                 {% endfor %}
             </form>
-            <button type="submit" class="btn-a" name="a_btn">A</button>
-            <button type="submit" class="btn-a" name="b_btn">B</button>
-            <button type="submit" class="btn-a" name="c_btn">C</button>
-            <button type="submit" class="btn-a" name="d_btn">D</button>
+            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'A' %}">A</a></button>
+            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'B' %}">B</a></button>
+            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'C' %}">C</a></button>
+            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'D' %}">D</a></button>
         </div>
     </div>
 

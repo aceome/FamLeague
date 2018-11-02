@@ -30,9 +30,11 @@
                             <label class="lbl">Password</label>
                             <input type="password" name="password" placeholder="Password" >
                             </div>
-                            <button type="submit" class="btn">Sign in</button>
+                            <button type="submit" class="login-btn">Sign in</button>
+
 
                     </form>
+                        <!--<span id="login_failed"></span>-->
                     </div>
                     </div>
                 </div>
@@ -60,18 +62,30 @@
                                 <input type="text" name="email" placeholder="Email">
                                 </div>
 
-                                <button type="submit" class="btn">Sign me up</button>
+                                <button type="submit" class="login-btn">Sign me up</button>
                         </form>
                         </div>
                         </div>
                 </div>
             </div>
+        <!--<script type="text/javascript">-->
+            <!--let login_success = false;  /* set this to true if the login was a success */-->
+
+            <!--if(login_success === false)-->
+            <!--{-->
+                <!--document.getElementById("login_failed").innerHTML = "Login Failed, try again.";-->
+            <!--}-->
+            <!--else-->
+            <!--{-->
+                <!--window.location = "{% url 'famleague:login_user' %}";-->
+            <!--}-->
+        <!--</script>-->
 
 
         <!-- Footer -->
         <footer>
         	<div class="container">
-
+            <p>Aceome Inc. ©</p>
         	</div>
         </footer>
 

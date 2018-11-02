@@ -79,13 +79,14 @@ def pick_team(request, team_id):
 
 @login_required
 def leader(request):
-    teams = request.team_set.all()
-    print(teams)
+    # get all the users
+    users = User.objects.all()
+    print(users)
+    # get all the users teams/scores
+    user_teams = Team.objects.filter('score_2019')
+    print(team_score)
+    # add the users scores
 
-    score = Team.objects.get()
-    print(score)
-    user = request.user
-    print(user)
-    leader_board = {'user': user, 'teams': teams, 'score': score}
+    leader_board = {'users': users, 'team_score': team_score}
     print(leader_board)
     return render(request, 'famleague/leader.html', leader_board)
