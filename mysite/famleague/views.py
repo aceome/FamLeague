@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from .models import Team
+# from . models import TeamScore
 
 from django.contrib.auth.decorators import login_required
 
@@ -41,7 +42,7 @@ def register_user(request):
     password = request.POST['password']
     user = User.objects.create_user(username, email, password)
     login(request, user)
-    return HttpResponseRedirect(reverse('famleague:index'))
+    return HttpResponseRedirect(reverse('famleague:rules'))
 
 
 
@@ -54,24 +55,37 @@ def rules(request):
 def lineup(request, category):
     teams = Team.objects.filter(category=category).order_by('-score_2018')
     user_teams = {'teams': teams, 'category': category}
-    # a_btn = request.user.POST('a_btn')
     return render(request, 'famleague/lineup.html', user_teams)
 
 
 @login_required
 def pick_team(request, team_id):
     # look up the team with that id
-    id = request.POST['id']
-    team_id = Team.objects.get(pk=id)
-    # the user is request.user
+    team = Team.objects.get(pk=team_id)
     user = request.user
+    flag = False
+    for one_team in user.team_set.all():
+        if one_team.category == team.category:
+            flag = True
+    if flag:
+        team.users.remove(user)
     # add the team to the user's list of teams
-    user.team_id.save()
-    return HttpResponseRedirect(reverse('famleague:lineup', kwargs={'lineup': 'category'}))
+    else:
+        team.users.add(user)
+    return HttpResponseRedirect(reverse('famleague:lineup', kwargs={'category': 'team'}))
 
 
 
 
 @login_required
 def leader(request):
-    return render(request, 'famleague/leader.html')
+    teams = request.team_set.all()
+    print(teams)
+
+    score = Team.objects.get()
+    print(score)
+    user = request.user
+    print(user)
+    leader_board = {'user': user, 'teams': teams, 'score': score}
+    print(leader_board)
+    return render(request, 'famleague/leader.html', leader_board)
