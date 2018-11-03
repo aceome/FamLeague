@@ -79,14 +79,25 @@ def pick_team(request, team_id):
 
 @login_required
 def leader(request):
+    teams = Team.objects.all()
+    all_scores = []
+    score = 0
+    for tem in teams:
+        score += tem.score_2019
+    all_scores.append({'team': tem.name, 'allscore': score})
+    all_scores.sort(key=lambda x: x['allscore'], reverse=True)
+    all_context = {'all_scores': all_scores}
+
     # get all the users
     users = User.objects.all()
-    print(users)
-    # get all the users teams/scores
-    user_teams = Team.objects.filter('score_2019')
-    print(team_score)
-    # add the users scores
+    user_scores = []
+    # iterate over users
+    for user in users:
+        user_score = 0
+        for team in user.team_set.all():
+            user_score += team.score_2019
+        user_scores.append({'username': user.username, 'score': user_score})
+    user_scores.sort(key=lambda x: x['score'], reverse=True)
 
-    leader_board = {'users': users, 'team_score': team_score}
-    print(leader_board)
-    return render(request, 'famleague/leader.html', leader_board)
+    context = {'user_scores': user_scores}
+    return render(request, 'famleague/leader.html', context, all_context)

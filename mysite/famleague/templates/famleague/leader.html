@@ -8,7 +8,7 @@
 </head>
 <body>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-    <h1>Leader Board</h1>
+    <h2>Leader Board</h2>
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -26,12 +26,26 @@
                 <th>Name</th>
                 <th>Score</th>
             </tr>
-            {% for leader in leader_board %}
+            {% for user_score in user_scores %}
             <tr>
-                <td>{{user}}</td>
-                <td>{{leader.score}}</td>
+                <td>{{user_score.username}}</td>
+                <td>{{user_score.score}}</td>
             </tr>
-            {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+    <div class="team-board">
+        <table>
+            <tr>
+                <th>Team Name</th>
+                <th>Score</th>
+            </tr>
+            {% for score in scores %}
+            <tr>
+                <td>{{score.name}}</td>
+                <td>{{score.score_2019}}</td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
 
