@@ -2,10 +2,10 @@ html, body {
     margin: 0;
 }
 body {
-
-   text-align: center;
+    text-align: center;
     font-family: 'Open Sans', sans-serif;
 }
+
 #main-flex-container {
     text-align: center;
     margin: 0 auto;

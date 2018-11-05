@@ -22,15 +22,15 @@
            </div>
 
         {% endfor %}
-        <div class="added-score">Your Score is: </div>
+        <div class="added-score">Your Score is:{{user.score}}</div>
 
     </div>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="{% url 'famleague:rules' %}">How to Play</a>
       <a href="{% url 'famleague:index' %}">Your Team</a>
+      <a href="{% url 'famleague:rules' %}">How to Play</a>
+      <a href="{% url 'famleague:lineup' 'A' %}">Pick your Lineup</a>
       <a href="{% url 'famleague:leader' %}">Leaderboard</a>
-      <a href="{% url 'famleague:lineup' 'A' %}">Lineup</a>
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
 
     </div>

@@ -20,7 +20,7 @@
       <!--<a href="#">Contact</a>-->
     </div>
 
-    <div class="l-board">
+    <div class="lead-board">
         <table>
             <tr>
                 <th>Name</th>
@@ -39,11 +39,13 @@
             <tr>
                 <th>Team Name</th>
                 <th>Score</th>
+                <th>Category</th>
             </tr>
-            {% for score in scores %}
+            {% for team_score in team_scores %}
             <tr>
-                <td>{{score.name}}</td>
-                <td>{{score.score_2019}}</td>
+                <td>{{team_score.team}}</td>
+                <td>{{team_score.score}}</td>
+                <td>{{team_score.category}}</td>
             </tr>
             {% endfor %}
         </table>
