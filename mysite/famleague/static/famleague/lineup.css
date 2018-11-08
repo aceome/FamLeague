@@ -1,0 +1,16 @@
+/* Lineup page */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.teampick {
+    transition: .5s ease;
+    opacity: .3;
+
+}
+
+.teampick:hover {
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}

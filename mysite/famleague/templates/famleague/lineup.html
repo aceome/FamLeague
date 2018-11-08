@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <title>🏈 FamLeague 🏈</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'famleague/lineup.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'famleague/navigation.css' %}" />
 </head>
 <body>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="{% url 'famleague:rules' %}">How to Play</a>
       <a href="{% url 'famleague:index' %}">Your Team</a>
+      <a href="{% url 'famleague:rules' %}">How to Play</a>
+      <a href="{% url 'famleague:lineup' 'A' %}">Pick Lineup</a>
       <a href="{% url 'famleague:leader' %}">Leaderboard</a>
-      <a href="{% url 'famleague:lineup' 'A' %}">Lineup</a>
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
       <!--<a href="#">Contact</a>-->
     </div>

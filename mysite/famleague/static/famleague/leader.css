@@ -1,0 +1,16 @@
+/* Leaderboard page */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 3px;
+    margin: 5px;
+
+}
+#main-leader-content {
+    display: flex;
+    flex-direction: row;
+}
