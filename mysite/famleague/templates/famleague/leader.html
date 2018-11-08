@@ -8,49 +8,56 @@
 </head>
 <body>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-    <h2>Leader Board</h2>
+
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="{% url 'famleague:rules' %}">How to Play</a>
       <a href="{% url 'famleague:lineup' 'A' %}">Lineup</a>
       <a href="{% url 'famleague:index' %}">Your Team</a>
-      <a href="{% url 'famleague:leader' %}">Leader Board</a>
+      <a href="{% url 'famleague:leader' %}">Leaderboard</a>
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
-      <!--<a href="#">Contact</a>-->
-    </div>
 
-    <div class="lead-board">
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Score</th>
-            </tr>
-            {% for user_score in user_scores %}
-            <tr>
-                <td>{{user_score.username}}</td>
-                <td>{{user_score.score}}</td>
-            </tr>
-            {% endfor %}
-        </table>
     </div>
-    <div class="team-board">
-        <table>
-            <tr>
-                <th>Team Name</th>
-                <th>Score</th>
-                <th>Category</th>
-            </tr>
-            {% for team_score in team_scores %}
-            <tr>
-                <td>{{team_score.team}}</td>
-                <td>{{team_score.score}}</td>
-                <td>{{team_score.category}}</td>
-            </tr>
-            {% endfor %}
-        </table>
+    <div id="main-leader-content">
+        <h2>Leaderboard</h2>
+        <div class="lead-board">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+                {% for user_score in user_scores %}
+                <tr>
+                    <td>{{user_score.username}}</td>
+                    <td>{{user_score.score}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="team-board">
+            <table>
+                <tr>
+                    <th>Team Name</th>
+                    <th>Score</th>
+                    <th>Category</th>
+                </tr>
+                {% for team_score in team_scores %}
+                <tr>
+                    <td>{{team_score.team}}</td>
+                    <td>{{team_score.score}}</td>
+                    <td>{{team_score.category}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+         <!-- Footer -->
+        <footer>
+        	<div class="footer">
+            <p>Angelina Bowmer, Inc. ©</p>
+        	</div>
+        </footer>
     </div>
-
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";

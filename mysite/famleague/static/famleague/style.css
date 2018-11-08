@@ -2,58 +2,93 @@ html, body {
     margin: 0;
 }
 body {
-    text-align: center;
+    /*text-align: center;*/
     font-family: 'Open Sans', sans-serif;
 }
 
-#main-flex-container {
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 100vw;
-    background-color: #818181;
+.footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    color: black;
+    text-shadow: 1px 1px white;
+
 }
 
-#main-user-page {
-    /*display: flex;*/
-    flex-direction: row;
-    justify-content: center;
+
+/* Login page*/
+#main-flex-container {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("./images/football-field.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
 }
 
 .form-box {
+    margin-top: 5%;
     text-align: left;
     display: flex;
     flex-direction: row;
-    background-color: white;
     justify-content: space-evenly;
 
 }
 
 .left-container, .right-container {
-    display: flex;
-    flex-direction: column;
+    color: white;
+    text-shadow: 2px 1px black;
+    /*display: block;*/
+    /*flex-direction: column;*/
     width: 500px;
     height: 300px;
-
+    /*justify-content: center;*/
+    background-image: url("./images/footballtexture.jpg");
+    border-radius: 7px;
+    padding: 20px;
+    box-shadow: 5px 10px 18px #000000;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
-.top-left, .top-right {
-    background-color: blue;
-    border-top-left-radius: 8px;
-    padding: 10px;
+div {
+    display: inline;
 }
 
-.bottom-left, .bottom-right {
+label {
+    position: relative;
+    margin-right: auto;
+}
+section {
+    display: block;
+}
+
+input {
+
+    box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
+    width: 300px;
+    height: 25px;
+    padding: 3px;
+    margin: 3px;
+}
+
+
+/* index page */
+#main-user-page {
     display: flex;
-    justify-content: center ;
-    background-color: dodgerblue;
-    padding:10px;
+    flex-direction: column;
+    justify-content: center;
+
 }
-
-
-
-
+.user-lineup {
+    justify-content: center;
+    flex-direction: row;
+}
 
 
 
@@ -61,8 +96,8 @@ body {
 /* Navigation */
 #menu {
     margin: 20px;
-    /*justify-content: left;*/
-    /*position: absolute;*/
+    text-align: left;
+
 }
 .sidenav {
     height: 100%;
@@ -110,11 +145,16 @@ a, a:hover, a:focus {
 	text-decoration: none;
     transition: all .3s;
 }
+/*Login Page*/
 h1 {
-
+    margin: 0 auto;
+    color: darkorange;
+    text-shadow: 2px 2px dodgerblue;
     font-family: 'Monoton', cursive;
+    font-size: 5em;
 }
-h1, h2 {
+
+h2 {
 	margin-top: 10px;
 	font-size: 38px;
 
@@ -188,43 +228,43 @@ h1, h2 {
     transform: rotate(45deg);
 
 }
+
 #main-rules {
     text-align: center;
     width: 750px;
     background-color: rgba(0, 0, 0, .3);
 }
 .btn {
-  border: none;
-  background-color: transparent;
+    border: none;
+    background-color: transparent;
 }
 
 img {
     width: 150px;
 }
 
+/* Lineup page */
 .teampick {
-  transition: .5s ease;
-  opacity: .3;
-
+    transition: .5s ease;
+    opacity: .3;
 
 }
+
 .teampick:hover {
-  opacity: 1;
-  transition: .5s ease;
-  backface-visibility: hidden;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
 }
+
+/* Leaderboard page */
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    padding: 3px;
+    margin: 5px;
+
 }
-/*#main-lineup {*/
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*flex-wrap: wrap;*/
-    /*justify-content: space-evenly;*/
-/*}*/
-/*.teams {*/
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*justify-content: space-evenly;*/
-/*}*/
+#main-leader-content {
+    display: flex;
+    flex-direction: row;
+}

@@ -13,23 +13,30 @@
         <span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
         <h2>Welcome, {{user}}</h2>
         <h3>Your Team Lineup</h3>
-
+    <div class="lineup">
         {% for team in teams %}
+        <div class="user-lineup">
+
              <img src="{{team.image.url}}">
-           <div> {{team.city}}
-            {{team.name}}
-               <span>Score= {{team.score_2019}}</span>
-           </div>
+            <p>{{team.city}} {{team.name}}</p>
+               <p>Score: {{team.score_2019}}</p>
 
+         </div>
         {% endfor %}
-        <div class="added-score">Your Score is:{{user.score}}</div>
-
+        <!--<div class="added-score">Your Score is:{{user.score}}</div>-->
+    </div>
+     <!-- Footer -->
+        <footer>
+        	<div class="footer">
+            <p>Angelina Bowmer, Inc. ©</p>
+        	</div>
+        </footer>
     </div>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="{% url 'famleague:index' %}">Your Team</a>
       <a href="{% url 'famleague:rules' %}">How to Play</a>
-      <a href="{% url 'famleague:lineup' 'A' %}">Pick your Lineup</a>
+      <a href="{% url 'famleague:lineup' 'A' %}">Pick Lineup</a>
       <a href="{% url 'famleague:leader' %}">Leaderboard</a>
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
 
