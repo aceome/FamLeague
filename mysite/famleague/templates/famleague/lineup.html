@@ -28,10 +28,12 @@
             <form method="post">
                 {% csrf_token %}
                 {% for team in teams %}
+                <div class="team">
                     <button type="submit" class="btn" formaction="{% url 'famleague:pick_team' team.id %}">
                         <img class="teampick" src="{{team.image.url}}">
                     </button>
-                <div class="team-city"> {{team.city}} {{team.name}}</div>
+                <p> {{team.city}} {{team.name}}</p>
+                </div>
                 {% endfor %}
             </form>
             <button class="btn-cat"><a href="{% url 'famleague:lineup' 'A' %}">A</a></button>
