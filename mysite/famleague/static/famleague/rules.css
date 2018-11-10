@@ -9,6 +9,19 @@ body {
     font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
 }
+header {
+    background-image: url("./images/football-field.jpg");
+    width: 100%;
+    height: 60px;
+    color: black;
+    text-shadow: 1px 1px white;
+    padding: 10px;
+    position: sticky;
+    top: -1px;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
 footer {
     background-image: url("./images/football-field.jpg");
     position: sticky;
@@ -18,6 +31,7 @@ footer {
     padding: 10px;
     color: black;
     text-shadow: 1px 1px white;
+    border-top: 1px solid black;
 
 }
 

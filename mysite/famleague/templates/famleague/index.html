@@ -18,8 +18,9 @@
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
 
     </div>
+    <header><span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></header>
     <div id="main-user-page">
-        <span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
         <h2>Welcome, {{user}}!</h2>
         <h3>Your Team Lineup</h3>
         <div class="lineup">
