@@ -13,15 +13,16 @@
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="{% url 'famleague:rules' %}">How to Play</a>
-      <a href="{% url 'famleague:lineup' 'A' %}">Lineup</a>
       <a href="{% url 'famleague:index' %}">Your Team</a>
+      <a href="{% url 'famleague:rules' %}">How to Play</a>
+      <a href="{% url 'famleague:lineup' 'A' %}">Pick Lineup</a>
       <a href="{% url 'famleague:leader' %}">Leaderboard</a>
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
 
     </div>
+    <h2>Leaderboard</h2>
     <div id="main-leader-content">
-        <h2>Leaderboard</h2>
+
         <div class="lead-board">
             <table>
                 <tr>
@@ -52,13 +53,12 @@
                 {% endfor %}
             </table>
         </div>
-         <!-- Footer -->
-        <footer>
-        	<div class="footer">
-            <p>Angelina Bowmer, Inc. ©</p>
-        	</div>
-        </footer>
+
     </div>
+    <!-- Footer -->
+        <footer>
+            <p>Angelina Bowmer, Inc. ©</p>
+        </footer>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";

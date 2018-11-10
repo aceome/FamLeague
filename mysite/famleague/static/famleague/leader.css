@@ -3,9 +3,32 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
+html {
+    height: 100%;
+}
 body {
+    min-height: 100%;
+    display: table;
+    width: 100%;
     font-family: 'Open Sans', sans-serif;
+
+}
+h2 {
+    color: darkorange;
+    text-shadow: 2px 1px dodgerblue;
+    text-align: center;
+    font-size: 3em;
+}
+footer {
+    text-align: center;
+    background-image: url("./images/football-field.jpg");
+    width: 100%;
+    height: 60px;
+    color: black;
+    text-shadow: 1px 1px white;
+    padding: 10px;
+    position: sticky;
+    bottom: -1px;
 }
 
 table, th, td {
@@ -13,18 +36,26 @@ table, th, td {
     border-collapse: collapse;
     padding: 3px;
     margin: 5px;
+    width: 500px;
 
+}
+
+th {
+    background-color: dodgerblue;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: lightgrey;
 }
 #main-leader-content {
+    justify-content: space-evenly;
     display: flex;
     flex-direction: row;
+    /*display: table-row;*/
+    height: 100%;
+    padding: 20px;
 }
-.footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:60px;
-    color: black;
-    text-shadow: 1px 1px white;
 
-}
+
+
+

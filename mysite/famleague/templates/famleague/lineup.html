@@ -15,39 +15,37 @@
       <a href="{% url 'famleague:lineup' 'A' %}">Pick Lineup</a>
       <a href="{% url 'famleague:leader' %}">Leaderboard</a>
       <a href="{% url 'famleague:logout_user' %}">Logout</a>
-      <!--<a href="#">Contact</a>-->
     </div>
-    <div id="main-lineup">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
 
-        <h2>Create Your Lineup</h2>
 
         <div class="teams">
+            <h2>Create Your Lineup</h2>
+            <center><p class="how-to">Pick a team from each category, once you have made your selection the team will be placed in the "Your Team" page. To remove a team, click on the same team helmet you chose before then click on a new team in the same category to add to your homepage.</p></center>
             <h3>{{category}}</h3>
+            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'A' %}">A</a></button>
+            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'B' %}">B</a></button>
+            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'C' %}">C</a></button>
+            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'D' %}">D</a></button>
 
-            <form method="post">
+            <form method="post" id="main-flex-lineup">
                 {% csrf_token %}
                 {% for team in teams %}
                 <div class="team">
                     <button type="submit" class="btn" formaction="{% url 'famleague:pick_team' team.id %}">
                         <img class="teampick" src="{{team.image.url}}">
                     </button>
-                <p> {{team.city}} {{team.name}}</p>
+                    <p> {{team.city}} {{team.name}}</p>
                 </div>
                 {% endfor %}
             </form>
-            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'A' %}">A</a></button>
-            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'B' %}">B</a></button>
-            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'C' %}">C</a></button>
-            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'D' %}">D</a></button>
+
         </div>
          <!-- Footer -->
         <footer>
-        	<div class="footer">
             <p>Angelina Bowmer, Inc. ©</p>
-        	</div>
         </footer>
-    </div>
+
 
 
 

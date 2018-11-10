@@ -20,20 +20,20 @@
                     <div class="form">
                     <form action="{% url 'famleague:login_user' %}" method="post" class="login-form">
                     {% csrf_token %}
-                        <section>
+                        <table>
                             <h2>Login</h2>
-                            <p>
-                            <label class="lbl">Username</label>
-                            <input type="text" name="username" placeholder="Username" >
-                            </p>
+                            <tr>
+                            <td><label class="lbl">Username</label></td>
+                            <td><input type="text" name="username" placeholder="Username"></td>
+                            </tr>
 
-                            <p>
-                            <label class="lbl">Password</label>
-                            <input type="password" name="password" placeholder="Password" >
-                            </p>
-                            <button type="submit" class="login-btn">Sign in</button>
+                            <tr>
+                            <td><label class="lbl">Password</label></td>
+                            <td><input type="password" name="password" placeholder="Password"></td>
+                            </tr>
 
-                        </section>
+                        </table>
+                        <button type="submit" class="login-btn">Sign in</button>
                     </form>
 
                     </div>
@@ -48,25 +48,24 @@
                         <div class="form">
                         <form action="{% url 'famleague:register_user' %}" method="post" class="registration-form">
                         {% csrf_token %}
-                                <section>
+                                <table>
                                     <h2>Register</h2>
-                                        <p>
-                                        <label class="lbl" >Username</label>
-                                        <input type="text" name="username" placeholder="Username" >
-                                        </p>
+                                        <tr>
+                                        <td><label class="lbl" >Username</label></td>
+                                        <td><input type="text" name="username" placeholder="Username"></td>
+                                        </tr>
 
-                                        <p>
-                                        <label class="lbl" >Password</label>
-                                        <input type="password" name="password" placeholder="Password">
-                                        </p>
+                                        <tr>
+                                        <td><label class="lbl" >Password</label></td>
+                                        <td><input type="password" name="password" placeholder="Password"></td>
+                                        </tr>
 
-                                        <p>
-                                        <label class="lbl">Email</label>
-                                        <input type="text" name="email" placeholder="Email">
-                                        </p>
-
-                                        <button type="submit" class="login-btn">Sign me up</button>
-                                </section>
+                                        <tr>
+                                        <td><label class="lbl">Email</label></td>
+                                        <td><input type="text" name="email" placeholder="Email"></td>
+                                        </tr>
+                                </table>
+                            <button type="submit" class="login-btn">Sign me up</button>
                         </form>
 
                         </div>
@@ -77,9 +76,7 @@
 
         <!-- Footer -->
         <footer>
-        	<div class="footer">
             <p>Angelina Bowmer, Inc. ©</p>
-        	</div>
         </footer>
     </div>
 
