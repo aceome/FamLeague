@@ -26,14 +26,12 @@
         <div class="lineup">
             {% for team in teams %}
             <div class="user-lineup">
-
-                 <img src="{{team.image.url}}">
+                <img src="{{team.image.url}}">
                 <p>{{team.city}} {{team.name}}</p>
-                   <p>Score: {{team.score_2019}}</p>
-
+                <p>Score: {{team.score_2019}}</p>
              </div>
             {% endfor %}
-            <!--<div class="added-score">Your Score is:{{user.score}}</div>-->
+
         </div>
      <!-- Footer -->
         <footer>

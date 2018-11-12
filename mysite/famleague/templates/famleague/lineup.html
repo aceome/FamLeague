@@ -20,22 +20,23 @@
 
 
         <div class="teams">
-            <h2>Create Your Lineup</h2>
+            <h2>Create Your Lineup</h2> <h3>{{category}}</h3>
             <center><p class="how-to">Pick a team from each category, once you have made your selection the team will be placed in the "Your Team" page. To remove a team, click on the same team helmet you chose before then click on a new team in the same category to add to your homepage.</p></center>
-            <h3>{{category}}</h3>
-            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'A' %}">A</a></button>
-            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'B' %}">B</a></button>
-            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'C' %}">C</a></button>
-            <button class="btn-cat"><a href="{% url 'famleague:lineup' 'D' %}">D</a></button>
+
+            <button id="a_team_bt" class="btn-cat">A</button>
+            <button id="b_team_bt" class="btn-cat">B</button>
+            <button id="c_team_bt" class="btn-cat">C</button>
+            <button id="d_team_bt" class="btn-cat">D</button>
 
             <form method="post" id="main-flex-lineup">
                 {% csrf_token %}
                 {% for team in teams %}
                 <div class="team">
                     <button type="submit" class="btn" formaction="{% url 'famleague:pick_team' team.id %}">
-                        <img class="teampick" src="{{team.image.url}}">
+                        <img {% if team.id not in user_team_ids %}class="teampick"{% endif %} src="{{team.image.url}}">
                     </button>
                     <p> {{team.city}} {{team.name}}</p>
+
                 </div>
                 {% endfor %}
             </form>
@@ -55,6 +56,25 @@
 
 
     <script>
+
+        let a_team_bt = document.querySelector('#a_team_bt')
+        a_team_bt.onclick = function() {
+            window.location = "{% url 'famleague:lineup' 'A' %}"
+        }
+        let b_team_bt = document.querySelector('#b_team_bt')
+        b_team_bt.onclick = function() {
+            window.location = "{% url 'famleague:lineup' 'B' %}"
+        }
+        let c_team_bt = document.querySelector('#c_team_bt')
+        c_team_bt.onclick = function() {
+            window.location = "{% url 'famleague:lineup' 'C' %}"
+        }
+        let d_team_bt = document.querySelector('#d_team_bt')
+        d_team_bt.onclick = function() {
+            window.location = "{% url 'famleague:lineup' 'D' %}"
+        }
+
+
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
         }
