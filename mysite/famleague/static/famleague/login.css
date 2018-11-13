@@ -80,7 +80,17 @@ form {
     border: none;
     margin: 10px;
     border-bottom: 1px solid whitesmoke;
-    /*border-right: 1px solid whitesmoke;*/
+    border-radius: 5px;
+}
+.login-btn:hover {
+    background-color: dimgray;
+    color: white;
+    width: 150px;
+    height: 35px;
+    border: none;
+    margin: 10px;
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 5px;
 }
 
 input {
