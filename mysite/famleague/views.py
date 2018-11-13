@@ -112,3 +112,7 @@ def leader(request):
 
     context = {'user_scores': user_scores, 'team_scores': team_scores}
     return render(request, 'famleague/leader.html', context)
+
+# @login_required
+# def message(request):
+#

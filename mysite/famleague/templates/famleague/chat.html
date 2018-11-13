@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>🏈 FamLeague 🏈</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'famleague/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'famleague/chat.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'famleague/navigation.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Monoton|Open+Sans" rel="stylesheet">
 </head>
@@ -20,27 +20,27 @@
 
     </div>
     <header><span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></header>
-    <div id="main-user-page">
+    <div id="main-flex-chat">
+        <h1>The Chatter Box</h1>
 
-        <h2>Welcome, {{user}}!</h2>
-        <h3>Your Team Lineup</h3>
-        <div class="lineup">
-            {% for team in teams %}
-            <div class="user-lineup">
-                <img src="{{team.image.url}}">
-                <p>{{team.city}} {{team.name}}</p>
-                <p>Score: {{team.score_2019}}</p>
-             </div>
-            {% endfor %}
+        <form action="{% url 'famleague:message' %}" method="post" >
+        {% csrf_token %}
+        <input type="text" name="message" placeholder="enter message here">
+        <button class="btn" type="submit">Submit</button>
+        </form>
 
-        </div>
-     <!-- Footer -->
-        <footer>
-            <p>Angelina Bowmer, Inc. ©</p>
-        </footer>
+
+
+
+
     </div>
 
 
+
+    <!-- Footer -->
+    <footer>
+        <p>Angelina Bowmer, Inc. ©</p>
+    </footer>
 
     <script>
         function openNav() {
