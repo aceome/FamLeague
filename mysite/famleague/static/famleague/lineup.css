@@ -32,8 +32,8 @@ footer {
     background-color: black;
     position: sticky;
     bottom: -1px;
-    width:100%;
-    height:60px;
+    width: 100%;
+    height: 60px;
     padding: 10px;
     color: white;
     text-shadow: 1px 1px gray;
@@ -69,7 +69,7 @@ h3 {
     width: 150px;
     height: 35px;
     border: none;
-    margin: 10px;
+    margin: 20px;
 
 }
 
@@ -79,13 +79,12 @@ h3 {
     width: 150px;
     height: 35px;
     border: none;
-    margin: 10px;
+    margin: 20px;
 
 }
 
-
 .teams {
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: center;
 
 }
@@ -95,7 +94,7 @@ h3 {
     flex: 1 0 21%;
     text-align: center;
     margin: 20px;
-    overflow-x: hidden;
+
 }
 
 

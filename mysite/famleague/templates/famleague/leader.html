@@ -26,11 +26,13 @@
         <div class="lead-board">
             <table>
                 <tr>
+                    <th>Place</th>
                     <th>Name</th>
                     <th>Score</th>
                 </tr>
                 {% for user_score in user_scores %}
                 <tr>
+                    <td>{{ forloop.counter }}</td>
                     <td>{{user_score.username}}</td>
                     <td>{{user_score.score}}</td>
                 </tr>

@@ -16,6 +16,7 @@ body {
 }
 
 h2 {
+
     color: darkorange;
     text-shadow: 2px 1px dodgerblue;
     font-size: 3em;
@@ -37,7 +38,7 @@ header {
     text-shadow: 1px 1px white;
     padding: 10px;
     position: relative;
-    top: -1px;
+    top: 0;
     font-weight: bold;
     text-align: left;
 
@@ -64,7 +65,7 @@ footer {
 }
 
 .lineup {
-    margin: 2%;
+
     height: 100vw;
     width: 100%;
     display: flex;
